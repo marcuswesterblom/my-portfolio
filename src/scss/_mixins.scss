@@ -1,7 +1,7 @@
 @import "./variables";
 
 @mixin respond($bp) {
-    @media (min-width: map-get($grid-breakpoints)){
+    @media (min-width: map-get($grid-breakpoints, $bp)){
         @content;
     }
 }
