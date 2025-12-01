@@ -1,0 +1,14 @@
+@import "./variables";
+
+@mixin respond($bp) {
+    @media (min-width: map-get($grid-breakpoints)){
+        @content;
+    }
+}
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
