@@ -39,3 +39,14 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(-360deg);}
 }
+
+@keyframes underline {
+    from {  transform: scaleX(0);
+            transform-origin: left;
+            opacity: 0; }
+    to {
+        transform: scaleX(1);
+            transform-origin: left;
+                opacity: 1;
+    }
+}
