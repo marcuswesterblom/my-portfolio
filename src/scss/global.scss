@@ -170,23 +170,36 @@
         }
         #containerProjects {
             height: 0%;
-            width: 50%;
-            background-color: $secondary-color;
+            width: 80%;
+            max-width: 700px;
+            background-color: $primary-color;
             position: absolute;
             border-radius: $border-radius;
             z-index: 11;
-            opacity: 0;
-            @include flex($align: end, $justify: start);
+            opacity: 1;
+            overflow: hidden;
             filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.37));
-            transition: all 0.5s ease-in-out;
+            transition: all 1s ease-in-out;
             &.show {
                 height: 90%;
                 opacity: 1;
             }
+            #projectTitle {
+                font-style: $alumni-sans;
+                color: $secondary-color;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: $h2;
+                margin: 20px;
+                animation: textAnimation 1.5s ease-in-out forwards;
+            }
             #containerSpan{
+                position: absolute;
                 height: 20px;
                 width: 20px;
-                margin: 20px;
+                right: 20px;
+                top: 20px;
+                z-index: 7;
                 @include flex;
                 transition: all 1.5s ease;
                 animation: spinBack 1s ease forwards;
@@ -198,7 +211,7 @@
             #span3 {
                 display: block;
                 position: absolute;
-                background-color: $primary-color;
+                background-color: $secondary-color;
                 width: 5px;
                 height: 20px;
                 border-radius: 10px;
@@ -207,7 +220,7 @@
             #span4 {
                 display: block;
                 position: absolute;
-                background-color: $primary-color;
+                background-color: $secondary-color;
                 width: 5px;
                 height: 20px;
                 border-radius: 10px;
@@ -216,16 +229,70 @@
             }
         }
         #containerDark{
+            position: fixed;
             height: 100vh;
             width: 100%;
             position: absolute;
-            background-color: rgb(0, 0, 0);
+            background-color: #000000;
             opacity: 0;
-            z-index: 1;
-            transition: all 0.3s ease-in-out;
+            z-index: 9;
+            transition: all 1s ease-in-out;
+            pointer-events: none;
             &.show {
-                opacity: 0.7;
-                z-index: 7;
+                opacity: 0.5;
+                pointer-events: auto;
+                z-index: 10;
+            }
+        }
+        #cardContainer {
+            background-color: #ffe76e2d;
+            width: auto;
+            border-radius: $border-radius;
+            margin: 20px;
+            padding: 30px;
+            border: 1px solid #ffe76e41;
+            h3{
+                font-style: $alumni-sans;
+                color: $secondary-color;
+                font-weight: 900;
+                text-transform: uppercase;
+            }
+            #cardDescription{
+                font-family: $alumni-sans;
+                font-size: 1.2rem;
+                color: white;
+            }
+            #bttnDiv{
+                margin-top: 20px;
+            }
+            #keywords {
+                font-family: $alumni-sans;
+                font-size: 1rem;
+                color: rgba(255, 255, 255, 0.537);
+                font-style: italic;
+            }
+            #liveBttn{
+                padding: 15px;
+                background-color: $secondary-color;
+                font-style: $alumni-sans;
+                color: $primary-color;
+                font-weight: 900;
+                text-transform: uppercase;
+                border-radius: 15px;
+                text-align: center;
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.119));
+            }
+            #gitBttn{
+                margin: 15px;
+                padding: 15px;
+                background-color: $secondary-color;
+                font-style: $alumni-sans;
+                color: $primary-color;
+                font-weight: 900;
+                text-transform: uppercase;
+                border-radius: 15px;
+                text-align: center;
+                filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.119));
             }
         }
     }

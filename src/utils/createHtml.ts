@@ -17,6 +17,7 @@ export const createHtml = () => {
     const spanContainer = document.createElement("span");
     const span3 = document.createElement("span");
     const span4 = document.createElement("span");
+    const projectTitle = document.createElement("h2");
 
     containerTextHome.id = "containerTextHome";
     h1.textContent = "Marcus Westerblom";
@@ -29,6 +30,8 @@ export const createHtml = () => {
     containerSpan.id = "containerSpan";
     spanContainer.id = "spanContainer";
     containerDark.id = "containerDark";
+    projectTitle.id = "projectTitle";
+    projectTitle.textContent = "Projects";
 
     containerHome?.appendChild(containerTextHome);
     containerTextHome?.appendChild(h1);
@@ -38,12 +41,13 @@ export const createHtml = () => {
     spanContainer?.appendChild(span2);
     navBar?.appendChild(nav);
     containerProjects?.appendChild(containerSpan);
+    containerProjects?.appendChild(projectTitle);
     containerSpan?.appendChild(span3);
     containerSpan?.appendChild(span4);
     containerAll?.appendChild(containerDark);
+    
 
     const links = [
-        { text: "Home", href: "#", id: "homeBttn" },
         { text: "Projects", href: "#", id: "projectsBttn" },
         { text: "About", href: "#", id: "aboutBttn" }
     ];
