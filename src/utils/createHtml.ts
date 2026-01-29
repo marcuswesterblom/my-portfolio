@@ -5,9 +5,10 @@ export const createHtml = () => {
     const containerAll = document.getElementById("containerAll");
     const containerProjects = document.getElementById("containerProjects");
     const containerAbout = document.getElementById("containerAbout");
-    const containerDark = document.createElement("div");
+    const containerIntroduction = document.getElementById("containerIntroduction");
+    
     const containerSpan = document.createElement("div");
-
+    const competencesContainer = document.createElement("div");
     const containerTextHome = document.createElement("div");
     const h1 = document.createElement("h1");
     const headingHome = document.createElement("h2");
@@ -16,9 +17,9 @@ export const createHtml = () => {
     const span2 = document.createElement("span");
     const spanContainer = document.createElement("span");
     const span3 = document.createElement("span");
-    const span4 = document.createElement("span");
     const projectTitle = document.createElement("h2");
 
+    competencesContainer.id = "competencesContainer";
     containerTextHome.id = "containerTextHome";
     h1.textContent = "Marcus Westerblom";
     headingHome.textContent = "Front end developer";
@@ -26,10 +27,8 @@ export const createHtml = () => {
     span1.id = "span1";
     span2.id = "span2";
     span3.id = "span3";
-    span4.id = "span4";
     containerSpan.id = "containerSpan";
     spanContainer.id = "spanContainer";
-    containerDark.id = "containerDark";
     projectTitle.id = "projectTitle";
     projectTitle.textContent = "Projects";
 
@@ -43,17 +42,16 @@ export const createHtml = () => {
     containerProjects?.appendChild(containerSpan);
     containerProjects?.appendChild(projectTitle);
     containerSpan?.appendChild(span3);
-    containerSpan?.appendChild(span4);
-    containerAll?.appendChild(containerDark);
-    
+    containerIntroduction?.appendChild(competencesContainer);
 
     const links = [
         { text: "Projects", href: "#", id: "projectsBttn" },
-        { text: "About", href: "#", id: "aboutBttn" }
+        { text: "Contact me", href: "#", id: "contactBttn" }
     ];
 
     links.forEach(link => {
         const a = document.createElement("a");
+        const containerDark = document.getElementById("containerDark");
         a.textContent = link.text;
         a.href = link.href;
         a.id = link.id;
@@ -62,9 +60,26 @@ export const createHtml = () => {
         a.addEventListener("click", (e) => {
         e.preventDefault();
         containerProjects?.classList.add("show");
-        containerDark.classList.add("show");
+        containerDark?.classList.add("show");
     });
         }
         nav.appendChild(a);
+    });
+
+    const competences = [
+        { text: "HTML" },
+        { text: "SCSS" },
+        { text: "TYPESCRIPT" },
+        { text: "NODEJS" },
+        { text: "UX" },
+    ];
+
+    competences.forEach(competence => {
+        const p = document.createElement("p");
+        p.textContent = competence.text;
+
+        if(competencesContainer){
+            competencesContainer.appendChild(p);
+        }
     });
 }

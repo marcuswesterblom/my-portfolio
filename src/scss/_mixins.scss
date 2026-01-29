@@ -6,6 +6,17 @@
     }
 }
 
+@mixin bttn {
+    padding: 15px;
+    background-color: $secondary-color;
+    color: $accent-color;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 15px;
+    text-align: center;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.119));
+}
+
 @mixin flex($direction: column, $justify: center, $align: center) {
     display: flex;
     flex-direction: $direction;

@@ -20,6 +20,11 @@ export const projectsListener = () => {
         containerProjects?.classList.remove("show");
     });
 
+    containerDark.addEventListener("click", () => {
+        containerDark.classList.remove("show");
+        containerProjects?.classList.remove("show");
+    });
+
     projects.forEach(project => {
         const cardContainer = document.createElement("div");
         const cardTitle = document.createElement("h3");

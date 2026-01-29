@@ -1,21 +1,22 @@
 /* Colors */
 
-$primary-color: #281E16;
-$secondary-color: #FFE76E;
+$primary-color: #2c2c2c;
+$secondary-color: #f6f6f6;
 $accent-color: #D97127;
-$gradient-color: #37291E;
+$gradient-color: #f6f6f6;
 
 /* Fonts */
 $alumni-sans: "Alumni Sans", sans-serif;
 
 /* Font sizes */
 
-$h1: 48px;
-$h2: 32px;
-
+$h1: 2.5rem;
+$h2: 2rem;
+$h3: 1.5rem;
+$h1-desktop: 3rem;
 /* Border */
 $border-radius: 25px;
-$border: 5px solid $secondary-color;
+$border: 5px solid $accent-color;
 
 /* Breakpoints for media queries */
-$grid-breakpoints: (sm: 480px, md: 768px, lg: 800px);
+$grid-breakpoints: (sm: 400px, md: 500px, lg: 820px);

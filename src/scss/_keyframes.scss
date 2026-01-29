@@ -2,11 +2,11 @@
     0% {width: 40px; height: 40px;opacity: 0;padding: 0;}
     10% {width: 40px; height: 40px;opacity: 1;padding: 0;}
     30% {width: 100%; height: 40px; opacity: 1; padding: 0px;}
-    100% {width: 100%; height: 200px;opacity:1;padding: 10px;}
+    100% {width: 100%; height: 150px;opacity:1;padding: 10px;}
 }
 
 @keyframes menuMobileClose {
-    0% {width: 100%; height: 200px;opacity:1;padding: 10px;}
+    0% {width: 100%; height: 150px;opacity:1;padding: 10px;}
     30% {width: 100%; height: 40px; opacity: 1; padding: 0px;}
     90% {width:40px; height: 40px; opacity:1; padding:0;}
     100% {width: 40px; height: 40px;opacity: 0;padding: 0;}
@@ -20,9 +20,15 @@
 }
 
 @keyframes textAnimation{
-    0% {opacity:0; transform: translateY(100%);}
+    0% {opacity:0; transform: translateY(20px);}
     50% {opacity: 0;}
-    100% {opacity: 1;transform: translateY(0%);}
+    100% {opacity: 1;transform: translateY(0);}
+}
+
+@keyframes infoAnimation{
+    0% {opacity:0; transform: translateY(20px);}
+    50% {opacity: 0;}
+    100% {opacity: 1;transform: translateY(0);}
 }
 
 @keyframes rotate-in-center {
