@@ -13,10 +13,11 @@ $alumni-sans: "Alumni Sans", sans-serif;
 $h1: 2.5rem;
 $h2: 2rem;
 $h3: 1.5rem;
+
 $h1-desktop: 3rem;
 /* Border */
 $border-radius: 25px;
 $border: 5px solid $accent-color;
 
 /* Breakpoints for media queries */
-$grid-breakpoints: (sm: 400px, md: 500px, lg: 820px);
+$grid-breakpoints: (sm: 400px, md: 575px, lg: 900px);

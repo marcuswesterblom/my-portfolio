@@ -5,11 +5,14 @@
 html, body {
     background-repeat: no-repeat;
     background-attachment: fixed;
+    justify-content: center;
+    background-color: $primary-color;
 }
 #wrapper {
     padding: 10px;
-    height: 100vh;
+    height: 100dvh;
     width: 100%;
+    max-width: 1000px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -20,10 +23,13 @@ html, body {
     }
     #navBar {
         position: relative;
+        border-radius: 15px;
         width: 100%;
-        left: 0;
-        top: 0;
+   
         z-index: 6;
+        @include respond(lg){
+            height: 0;
+        }
         #spanContainer {
             position: absolute;
             height: 20px;
@@ -35,7 +41,7 @@ html, body {
             transition: all 1.5s ease;
             animation: spinBack 1s ease forwards;
             span{ 
-                background-color: $accent-color;
+                background-color: $secondary-color;
             }
             #span1 {
                 display: block;
@@ -46,9 +52,6 @@ html, body {
                 transition: all 1.5s ease;
                 z-index: 2;
                 transform: rotate(90deg) translate(0px, 0px);
-                &.active {
-                    background-color: $secondary-color;
-                }
             }
             #span2 {
                 display: block;
@@ -57,8 +60,11 @@ html, body {
                 height: 20px;
                 border-radius: 10px;
                 opacity: 1;
-                transition: all 1s ease;
+                transition: all 0.3s ease;
                 z-index: 1;
+                 &.active {
+                    opacity: 0;
+                }
             }
             &.hover {
                 animation: spin 1s ease forwards;
@@ -66,13 +72,13 @@ html, body {
         }
         nav {
             @include flex;
-            width: 0;
+            width: 40px;
+            height: 40px;
+            padding: 10px;
             background-color: $accent-color;
             border-radius: 15px;
-            position: absolute;
-            height: 0;
             overflow: hidden;
-            opacity: 0;
+            opacity: 1;
             transition: all 0.3s ease-in-out;
             @include respond(md) {
                 flex-direction: row;
@@ -125,15 +131,17 @@ html, body {
     #containerAll {
         border: $border;
         border-radius: $border-radius;
-        height: 210px;
         padding: 5px;
+        padding-bottom: 40px;
         background-color: $secondary-color;
         filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.236));
         @include flex;
         @include respond(md){
-            height: 100%;
             width: 100%;
             min-width: 400px;
+        }
+        @include respond(lg){
+            height: 100%;
         }
         #containerHome {
             height: 100%;
@@ -141,6 +149,7 @@ html, body {
             @include flex;
             h2 {
                 color: $accent-color;
+            
             }
         }
     }
@@ -157,7 +166,7 @@ html, body {
     border: 1px solid #ffffff1c;
     border-radius: 25px;
     @include respond(lg){
-        max-width: 600px;
+        max-width: 800px;
     }
 }
 
@@ -172,37 +181,41 @@ html, body {
     width: 100%;
     border-radius: $border-radius;
     gap: 10px;
-    animation: infoAnimation 1.5s ease-in-out forwards;
+    animation: infoAnimation 2s ease-in-out forwards;
     @include flex($direction:column, $justify: start, $align: start);
     @include respond(md){
         flex-direction: row;
     }
     #containerImg{
-        height: 300px;
+        height: 100%;
         width: 100%;
         min-width: 115px;
+        border: 1px solid rgba(255, 255, 255, 0.248);
         border-radius: $border-radius;
         overflow: hidden;
-        z-index: 1;
         @include respond(md){
             width: 50%;
-        max-width: 200px;
+            max-width: 200px;
         }
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center 25%;
-            z-index: 1;
+            @include respond(lg){
+                object-position: calc(48% + 10px) 25%;
+            }
         }
     }
     #containerInfoText {
         background-color: #ffffff68;
         border: 1px solid rgba(255, 255, 255, 0.248);
         padding: 60px;
-        min-height: 300px;
         border-radius: $border-radius;
         @include flex($align: end);
+        p{
+            color: #d4d4d4;
+        }
     }
 }
 #competencesHeading {
@@ -215,8 +228,9 @@ html, body {
     flex-wrap: wrap;
     width: 100%;
     gap: 20px;
-    animation: textAnimation 1.5s ease-in-out forwards;
+    animation: textAnimation 2s ease-in-out forwards;
     p {
+        color: #bebebe;
         border: 1px solid rgba(255, 255, 255, 0.248);
         background-color: #ffffff1c;
         padding: 15px;
