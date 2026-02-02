@@ -1,15 +1,16 @@
 export const createHtml = () => {
-    const wrapper = document.getElementById("wrapper");
     const navBar = document.getElementById("navBar");
-    const containerHome = document.getElementById("containerHome");
-    const containerAll = document.getElementById("containerAll");
+    const sectionHero = document.getElementById("sectionHero");
     const containerProjects = document.getElementById("containerProjects");
-    const containerAbout = document.getElementById("containerAbout");
     const containerIntroduction = document.getElementById("containerIntroduction");
-    
+    const containerContact = document.getElementById("containerContact");
+
     const containerSpan = document.createElement("div");
     const competencesContainer = document.createElement("div");
     const containerTextHome = document.createElement("div");
+    const containerSpanContact = document.createElement("div");
+    const containerContactInfo = document.createElement("div");
+
     const h1 = document.createElement("h1");
     const headingHome = document.createElement("h2");
     const nav = document.createElement("nav");
@@ -17,7 +18,11 @@ export const createHtml = () => {
     const span2 = document.createElement("span");
     const spanContainer = document.createElement("span");
     const span3 = document.createElement("span");
+    const span4 = document.createElement("span");
     const projectTitle = document.createElement("h2");
+    const contactTitle = document.createElement("h2");
+    const contactText = document.createElement("h3");
+    const contactList = document.createElement("ul");
 
     competencesContainer.id = "competencesContainer";
     containerTextHome.id = "containerTextHome";
@@ -27,12 +32,21 @@ export const createHtml = () => {
     span1.id = "span1";
     span2.id = "span2";
     span3.id = "span3";
+    span4.id = "span4";
+    containerSpanContact.id = "containerSpanContact";
     containerSpan.id = "containerSpan";
     spanContainer.id = "spanContainer";
     projectTitle.id = "projectTitle";
     projectTitle.textContent = "Projects";
+    contactTitle.id = "contactTitle";
+    contactText.id = "contactText";
+    contactList.id = "contactList";
+    containerContactInfo.id = "containerContactInfo";
 
-    containerHome?.appendChild(containerTextHome);
+    contactTitle.textContent = "Contact me";
+    contactText.textContent = "Do not hesitate to reach out to me";
+
+    sectionHero?.appendChild(containerTextHome);
     containerTextHome?.appendChild(h1);
     containerTextHome.appendChild(headingHome);
     navBar?.appendChild(spanContainer);
@@ -43,6 +57,10 @@ export const createHtml = () => {
     containerProjects?.appendChild(projectTitle);
     containerSpan?.appendChild(span3);
     containerIntroduction?.appendChild(competencesContainer);
+    containerSpanContact.appendChild(span4);
+    containerContactInfo?.append(contactText, contactList);
+    containerContact?.append(contactTitle, containerSpanContact);
+    containerContact?.appendChild(containerContactInfo);
 
     const links = [
         { text: "Projects", href: "#", id: "projectsBttn" },
@@ -61,7 +79,14 @@ export const createHtml = () => {
         e.preventDefault();
         containerProjects?.classList.add("show");
         containerDark?.classList.add("show");
-    });
+        });
+        }
+        if (link.id === "contactBttn") {
+        a.addEventListener("click", (e) => {
+        e.preventDefault();
+        containerContact?.classList.add("show");
+        containerDark?.classList.add("show");
+        });
         }
         nav.appendChild(a);
     });
@@ -82,4 +107,43 @@ export const createHtml = () => {
             competencesContainer.appendChild(p);
         }
     });
+
+    const contacts = [
+        {   
+            label: "E-mail", 
+            value: "marcus.vesterblom@gmail.com",
+            href: "mailto:marcus.vesterblom@gmail.com" 
+        },
+        {
+            label: "Phone",
+            value: "+46 72 311 15 14",
+            href: "tel:+46723111514",
+        },
+        {   
+            label: "LinkedIn", 
+            value: "linkedin.com/marcuswesterblom",
+            href: "https://www.linkedin.com/in/marcus-westerblom-034358205/" 
+        },
+        {   
+            label: "Github", 
+            value: "github.com/marcuswesterblom",
+            href: "https://github.com/marcuswesterblom" 
+        }
+    ];
+    
+    contacts.forEach(contact => {
+        const li = document.createElement("li");
+        const p = document.createElement("p");
+        const a = document.createElement("a");
+
+        a.href = contact.href;
+        p. textContent = `${contact.label}:`
+        a.textContent =  `${contact.value}`;
+        a.target = "_blank";
+
+        li.append(p, a);
+        contactList.appendChild(li);
+    });
+    
 }
+

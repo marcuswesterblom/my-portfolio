@@ -1,0 +1,62 @@
+#containerContact {
+    @include container;
+    #contactTitle {
+        color: $secondary-color;
+        font-weight: 900;
+        margin: 20px;
+    }
+    #containerSpanContact{
+        @include spanContainer;
+    }
+    #span4 {
+        @include span;
+    }
+    #containerContactInfo {
+        margin: 20px;
+        z-index: 12;
+        @include flex;
+        ul {
+            @include flex; 
+            background-color: #ffe76e2d;
+            margin: 20px;
+            padding: 20px;
+            width: 100%;
+            border: 1px solid #ffe76e41;
+            border-radius: $border-radius;
+            @include respond(md) {
+                padding: 60px;
+                align-items: start;
+            }
+        }
+        li {
+            @include flex;
+            flex-wrap: wrap;
+            gap: 10px; 
+            @include respond(md){
+                flex-direction: row;
+            }
+            p{
+                font-family: $alumni-sans;
+                color: $secondary-color;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                @include respond(md){
+                    font-size: 1.5rem;
+                }
+            }
+            a{
+                font-family: $alumni-sans;
+                color: $secondary-color;
+                font-weight: 400;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                word-break: break-word;
+                white-space: normal;
+                @include respond(md){
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+#containerHero {
+    border: $border;
+    border-radius: $border-radius;
+    padding: 5px;
+    padding-bottom: 40px;
+    background-color: $secondary-color;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.236));
+    @include flex;
+    @include respond(md){
+        width: 100%;
+        min-width: 400px;
+    }
+    @include respond(lg){
+        height: 100%;
+    }
+    #sectionHero {
+        height: 100%;
+        padding: 20px;
+        z-index: 1;
+        @include flex;
+        h2 {
+            color: $accent-color;
+        }
+    }
+}

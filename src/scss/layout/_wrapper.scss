@@ -1,0 +1,15 @@
+#wrapper {
+    padding: 10px;
+    height: 100vh;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-color;
+    gap: 10px;
+    @include respond(lg){
+        @include flex($direction: row, $justify: stretch, $align: start);
+    }
+}

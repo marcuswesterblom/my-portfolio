@@ -1,0 +1,74 @@
+@import "./variables";
+
+@mixin respond($bp) {
+    @media (min-width: map-get($grid-breakpoints, $bp)){
+        @content;
+    }
+}
+
+@mixin bttn {
+    padding: 15px;
+    background-color: $bttn-color;
+    color: $accent-color;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-radius: 15px;
+    text-align: center;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.119));
+}
+
+@mixin flex($direction: column, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin container { 
+    position: fixed;
+    width: 90%;
+    max-width: 800px;
+    transform: translate(-50%, -50%) scale(0);
+    top: 50%;
+    left: 50%;
+    background-color: $accent-color;
+    border-radius: $border-radius;
+    z-index: 11;
+    opacity: 0;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 231, 110, 0.2549);
+    filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.37));
+    transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    &.show {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@mixin spanContainer {
+    position: absolute;
+        height: 20px;
+        width: 20px;
+        right: 20px;
+        top: 20px;
+        z-index: 7;
+        @include flex;
+        transition: all 1.5s ease;
+        animation: spinBack 1s ease forwards;
+        cursor: pointer;
+        &.hover {
+        animation: spin 1s ease forwards;
+        }
+}
+
+@mixin span {
+    display: block;
+        position: absolute;
+        background-color: $secondary-color;
+        width: 5px;
+        height: 20px;
+        border-radius: 10px;
+        opacity: 1;
+        transform: rotate(90deg) translate(0px, 0px);
+}
+

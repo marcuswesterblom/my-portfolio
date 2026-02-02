@@ -1,0 +1,44 @@
+    #containerProjects {
+    @include container;
+    #projectTitle {
+        color: $secondary-color;
+        font-weight: 900;
+        margin: 20px;
+    }
+    #containerSpan{
+        @include spanContainer;
+    }
+    #span3 {
+        @include span;
+    }
+}
+#cardContainer {
+    background-color: #ffe76e2d;
+    margin: 20px;
+    padding: 30px;
+    border: 1px solid #ffe76e41;
+    border-radius: $border-radius;
+    #cardDescription{
+        color: white;
+    }
+    #bttnDiv{
+        margin-top: 20px;
+    }
+    #keywords {
+        color: #ffffff5f;
+        font-style: italic;
+    }
+    #liveBttn{
+        @include bttn;
+        &:hover{
+            background-color: $bttn-hover-color;
+        }
+    }
+    #gitBttn{
+        margin: 15px;
+        @include bttn;
+        &:hover{
+            background-color: $bttn-hover-color;
+        }
+    }
+}
