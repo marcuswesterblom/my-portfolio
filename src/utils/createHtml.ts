@@ -97,10 +97,16 @@ export const createHtml = () => {
 
     const competences = [
         { text: "HTML" },
+        { text: "CSS" },
         { text: "SCSS" },
-        { text: "TYPESCRIPT" },
-        { text: "NODEJS" },
+        { text: "Tailwind" },
+        { text: "TypeScript" },
+        { text: "JavaScript" },
+        { text: "NodeJS" },
+        { text: "React" },
         { text: "UX" },
+        { text: "Figma" },
+        { text: "Adobe" },
     ];
 
     competences.forEach(competence => {

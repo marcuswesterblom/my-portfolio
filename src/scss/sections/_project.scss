@@ -1,5 +1,6 @@
-    #containerProjects {
+#containerProjects {
     @include container;
+    overflow-y: auto;
     #projectTitle {
         color: $secondary-color;
         font-weight: 900;
@@ -20,6 +21,7 @@
     border-radius: $border-radius;
     #cardDescription{
         color: white;
+        padding: 10px;
     }
     #bttnDiv{
         margin-top: 20px;

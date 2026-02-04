@@ -7,9 +7,15 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: $primary-color;
     gap: 10px;
     @include respond(lg){
         @include flex($direction: row, $justify: stretch, $align: start);
     }
+}
+#modalRoot{
+    position: fixed;
+    inset: 0;
+    min-width: 320px;
+    z-index: 11;
+    pointer-events: none;
 }
